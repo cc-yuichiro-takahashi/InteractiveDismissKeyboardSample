@@ -8,12 +8,13 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBAction private func navigateToChatButtonTapAction(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Chat", bundle: nil)
+        let viewController = storyboard.instantiateInitialViewController()!
+        viewController.modalPresentationStyle = .fullScreen
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        present(viewController, animated: true, completion: nil)
     }
-
-
 }
+
 
