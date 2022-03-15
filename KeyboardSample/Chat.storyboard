@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="757"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t36-5I-Sjw">
+                            <view tag="404" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t36-5I-Sjw">
                                 <rect key="frame" x="0.0" y="801" width="414" height="61"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4DB-vD-7g5">
@@ -64,6 +64,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sZB-SA-aoC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="QXW-4k-0jf" firstAttribute="leading" secondItem="sZB-SA-aoC" secondAttribute="leading" id="0gH-Ss-KEk"/>
                             <constraint firstItem="sZB-SA-aoC" firstAttribute="trailing" secondItem="QXW-4k-0jf" secondAttribute="trailing" id="3PB-ec-JR8"/>
@@ -73,15 +74,24 @@
                             <constraint firstItem="t36-5I-Sjw" firstAttribute="leading" secondItem="sZB-SA-aoC" secondAttribute="leading" id="ygD-Ij-YU5"/>
                             <constraint firstItem="QXW-4k-0jf" firstAttribute="top" secondItem="sZB-SA-aoC" secondAttribute="top" id="zhE-6M-u5j"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="EDl-OL-vHo" appends="YES" id="Odw-an-x99"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="containerViewBottomConstraint" destination="Fs2-61-dy8" id="CxC-MD-1hE"/>
                         <outlet property="inputFieldContainerView" destination="t36-5I-Sjw" id="ogZ-gI-XdT"/>
+                        <outlet property="panGestureRecognizer" destination="EDl-OL-vHo" id="Pck-zv-hXu"/>
                         <outlet property="tableView" destination="QXW-4k-0jf" id="LNJ-dw-HVP"/>
                         <outlet property="textView" destination="geS-Rk-9y6" id="oYR-G6-5A1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LZH-X2-U8D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="EDl-OL-vHo">
+                    <connections>
+                        <action selector="panGestureAction:" destination="RYr-N9-heg" id="T0Z-Qc-tte"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-757.97101449275374" y="241.74107142857142"/>
         </scene>
